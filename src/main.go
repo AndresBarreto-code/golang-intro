@@ -27,9 +27,20 @@ func main() {
 	fmt.Println("float64", d)
 	fmt.Println("string", e)
 
+	// Arithmetic overflow
+	var x = 12
+	const y = 15
 	// Area of a square
-	const x = 100.3
 	area := x * x
-	fmt.Println("area", area)
+	fmt.Println("area: ", area)
+	fmt.Println("sum: ", x+y)
+	fmt.Println("subs: ", x-y)
+	fmt.Println("multiplication: ", x*y)
+	fmt.Println("division: ", x/y)
+	fmt.Println("Modulo: ", x%y)
+	x++
+	fmt.Println("Incremental: ", x)
+	x--
+	fmt.Println("Decremental: ", x)
 
 }
