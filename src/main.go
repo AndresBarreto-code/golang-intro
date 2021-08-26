@@ -2,18 +2,44 @@ package main
 
 import "fmt"
 
-func main() {
+func floatConst() {
 	// Float const
 	const pi float64 = 3.14
 	const pi2 = 3.1416
 	fmt.Println("pi", pi)
 	fmt.Println("pi2", pi2)
+}
 
+func intVariables(width, height int, message string) {
 	// Int variables
-	width := 123
-	var height int = 14
-	fmt.Println("width", width)
-	fmt.Println("height", height)
+	fmt.Println(message, width)
+	fmt.Println(message, height)
+}
+
+func returnValue(a int) int {
+	return a * 2
+}
+
+func doubleReturnValue(a, b int) (c, d int) {
+	return a, a * b
+}
+
+func main() {
+
+	floatConst()
+	intVariables(10, 12, "int")
+	value := returnValue(2)
+	fmt.Println("Value: ", value)
+
+	value1, value2 := doubleReturnValue(2, 3)
+	fmt.Println("Value1: ", value1)
+	fmt.Println("Value2: ", value2)
+
+	_, value3 := doubleReturnValue(2, 3) // escape vars
+	fmt.Println("Value3: ", value3)
+
+	value4, _ := doubleReturnValue(2, 3) // escape vars
+	fmt.Println("Value4: ", value4)
 
 	// Complex variables
 	const h = 123 + 123i
